@@ -38,14 +38,14 @@ const showHideComponents = function(){
       <loader v-if="isLoading"/>
       <theheader v-if="isDoneLoading"/>
       <freshperspective v-if="isDoneLoading"/>
-      <venue v-if="isDoneLoading"/>
+      <!-- <venue v-if="isDoneLoading"/>
       <speakers v-if="isDoneLoading"/> 
       <workshops v-if="isDoneLoading"/>
       <schedule v-if="isDoneLoading"/>
       <mapit v-if="isDoneLoading"/>
       <freestuff v-if="isDoneLoading"/>
       <partners v-if="isDoneLoading"/>
-      <thefooter v-if="isDoneLoading"/>
+      <thefooter v-if="isDoneLoading"/> -->
     </div>
 </template>
 
