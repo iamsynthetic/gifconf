@@ -1,5 +1,5 @@
 <script setup>
-import { ref } from 'vue'
+import { ref, onMounted } from 'vue'
 import { gsap } from 'gsap'
 import { CSSRulePlugin } from "gsap/CSSRulePlugin";
 
@@ -9,7 +9,7 @@ const props = defineProps({
     title: String,
     body: String
 })
-
+let root = ref(null)
 let btntitle = String;
 let container = String;
 let thecopy = String;
@@ -19,66 +19,34 @@ let schedulearrow = String;
 let schedulearrowcircle = String;
 let showSection = ref(false);
 let isDisabled = ref(false);
+let q = gsap.utils.selector(root);
 
-const arrowtl = gsap.timeline()
+// onMounted(() => {
+//     dofunction()
+// })
 
-// const arrowAnim = (bool) => {
+// function dofunction(){
+//     let q = gsap.utils.selector(root);
 
-// if(bool == 'forward')
-// {     
-//   arrowtl.to('.arrow3', {y:20, duration:.4, delay:.1, ease: 'Circ.easeInOut'})
-//   .to('.arrow2', {y:20, duration:.3, delay:-.3, ease: 'Circ.easeInOut'})
-//   .to('.arrow1', {y:20, duration:.2, delay:-.2, ease: 'Circ.easeInOut'})
-//   .to('.arrow3', {opacity:0, delay:-.5})
-//   .to('.arrow2', {opacity:0, delay:-.5})
-//   .to('.arrow1', {opacity:0, delay:-.5})
-//   .set('.arrow3', {y:-40, opacity:0})
-//   .set('.arrow2', {y:-40, opacity:0})
-//   .set('.arrow1', {y:-40, opacity:0})
-//   .to('.arrow3', {y:0, opacity:1, duration:.4, ease:'Circ.easeInOut'})
-//   .to('.arrow2', {y:0, opacity:1, duration:.3, delay:-.3, ease:'Circ.easeInOut'})
-//   .to('.arrow1', {y:0, opacity:1, duration:.2, delay:-.2, ease:'Circ.easeInOut'})
-  
-//   gsap.to('.buybutton', {scaleX:.9, scaleY:.9, duration:.3, ease:'Back.easeInOut'})
-//   let rule = CSSRulePlugin.getRule(".buybutton::before"); //get the rule
-//   btntl.to(rule, {duration: .5, cssRule: {marginLeft:"0px"}, ease:'Circ.easeInOut'});
-
-// } 
-// else if(bool == 'backward')
-// {
-//   gsap.to('.buybutton', {scaleX:1, scaleY:1, duration:.3, ease:'Back.easeInOut'})
-//   let rule = CSSRulePlugin.getRule(".buybutton::before"); //get the rule
-//   btntl.to(rule, {duration: .5, cssRule: {marginLeft:"-300px"}, ease:'Circ.easeInOut'});
+//     // uses this.$el.querySelectorAll() internally
+//     gsap.to(q(".box"), { x: 100 });
 // }
-// }
-
-// const buttonhover = (hovered) => {
-//   if(hovered == true)
-//   {
-//     arrowAnim('forward')
-//   }
-//   else 
-//   {
-//     arrowAnim('backward')
-//   }
-// }
-
-
 
 const domouseover = () => 
 {
-    console.log('mouse over')
+    gsap.to(q(titleref), { opacity:1, duration:.5 });
+    // console.log('mouse over')
     // gsap.to(titleref, {cssRule: {opacity:1}, duration: .5});
-    gsap.to('.button-title', {opacity:1, duration:.5})
     console.log('mouse over 2')
 }
 
 const domouseleave = () =>
 {
-    console.log('mouse leave')
+    // console.log('mouse leave')
     // gsap.to(titleref, {cssRule: {opacity:.4}, duration: .5});
-    gsap.to('.button-title', {opacity:.4, duration:.5})
-    console.log('mouse leave 2')
+    // console.log('mouse leave 2')
+
+    gsap.to(q(titleref), { opacity:.4, duration:.5 });
 }
 
 const toggle = () => 
