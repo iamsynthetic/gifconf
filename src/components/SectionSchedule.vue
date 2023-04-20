@@ -1,6 +1,6 @@
 <script setup>
 import { ref, onMounted } from 'vue'
-import { gsap } from 'gsap'
+import { gsap } from 'gsap/all'
 import { ScrollTrigger } from 'gsap/ScrollTrigger'
 import { CSSRulePlugin } from "gsap/CSSRulePlugin";
 import CollapseCard from './CollapseCard.vue';

@@ -1,6 +1,6 @@
 <script setup>
-import { ref, onMounted } from 'vue'
-import { gsap } from 'gsap'
+import { ref } from 'vue'
+import { gsap } from 'gsap/all'
 import { CSSRulePlugin } from "gsap/CSSRulePlugin";
 
 gsap.registerPlugin(CSSRulePlugin);
@@ -67,12 +67,12 @@ const arrowtl = gsap.timeline()
 
 const domouseover = () => 
 {
-    gsap.to(titleref, {cssRule: {opacity:1}, duration: .5});
+    gsap.to(titleref, {opacity:1, duration: .5});
 }
 
 const domouseleave = () =>
 {
-    gsap.to(titleref, {cssRule: {opacity:.4}, duration: .5});
+    gsap.to(titleref, {opacity:.4, duration: .5});
 }
 
 const toggle = () => 
@@ -83,11 +83,11 @@ const toggle = () =>
     if(showSection.value == false)
     {
         showSection.value = true
-        // gsap.set(thecopy, {opacity:0})
-        // gsap.set(dline, {width:'0%', opacity:1})
+        gsap.set(thecopy, {opacity:0})
+        gsap.set(dline, {width:'0%', opacity:1})
         gsap.to(schedulearrowcircle, {scaleX:.8, scaleY:.8, backgroundColor:'#F2F2F2', duration:.5, delay:.1, ease:"Back.easeInOut"})
         gsap.to(schedulearrow, {rotate:0, duration:.5, ease:"Expo.easeInOut"})
-        //gsap.to(dline, {width: '100%', duration:.5, ease:"Expo.easeInOut"})
+        gsap.to(dline, {width: '100%', duration:.5, ease:"Expo.easeInOut"})
         gsap.to(container, {height:'80px', duration:.5, ease:"Expo.easeInOut"})
         gsap.to(thecopy, {opacity:1, duration:.5, ease:"Expo.easeInOut", onComplete:setIsDisabled, onCompleteParams:[false, true]})
         
@@ -96,7 +96,7 @@ const toggle = () =>
     {
         gsap.to(schedulearrowcircle, {scaleX:1, scaleY:1, backgroundColor:'#F280CA', duration:.5, delay:.1, ease:"Back.easeInOut"})
         gsap.to(schedulearrow, {rotate:-90, duration:.5,  ease:"Expo.easeInOut"})
-        //gsap.to(dline, {width: '0%', duration:.5, ease:"Expo.easeInOut"})
+        gsap.to(dline, {width: '0%', duration:.5, ease:"Expo.easeInOut"})
         gsap.to(thecopy, {opacity:0, duration:.5, ease:"Expo.easeInOut"})
         gsap.to(container, {height: '0px', duration:.5, ease:"Expo.easeInOut", onComplete:setIsDisabled, onCompleteParams:[false, false]})
     }
