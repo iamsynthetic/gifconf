@@ -23,12 +23,20 @@ let showSection = ref(false);
 let isDisabled = ref(false);
 let q = gsap.utils.selector(root);
 
+let blah = props.className;
+
+
+console.log('blah is: ' + blah);
+
+
 const domouseover = () => 
 {
     //let q = gsap.utils.selector(root);
     //gsap.to(q(String('.button-title')), {opacity:1, duration:.5 });
     // console.log('mouse over')
-    gsap.to(String('.custom-class'), {opacity:1, duration: .5});
+    console.log('blah in mouse over is: ' + blah)
+    console.log('type of blah is: ' + typeof(blah))
+    gsap.to(String('.'+blah), {opacity:1, duration: .5});
     console.log('mouse over 2')
 }
 
@@ -38,8 +46,11 @@ const domouseleave = () =>
     // gsap.to(titleref, {cssRule: {opacity:.4}, duration: .5});
     // console.log('mouse leave 2')
     // gsap.to(q(".box"), { x: 100 });
-let q = gsap.utils.selector(root);
-    gsap.to(q(titleref), {x:0, duration:.5 });
+// let q = gsap.utils.selector(root);
+//     gsap.to(q(titleref), {x:0, duration:.5 });
+
+
+gsap.to(String('.'+blah), {opacity:.4, duration: .5});
 }
 
 const toggle = () => 

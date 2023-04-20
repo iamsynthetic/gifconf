@@ -56,11 +56,12 @@ function dofunction(){
           <CollapseCard
             title="day 1 - 9am to 11am room 1"
             body="Introduction to the Conference and General Discussions"
-            :class-name="'custom-class'"
+            :class-name="'q1'"
           />
           <CollapseCard 
             title="day 1 - 12pm to 1pm room 2"
             body="Gif, when people pronouce them with a J"
+            :class-name="'q2'"
           />
           <CollapseCard 
             title="day 1 - 2pm to 4pm room 3"
