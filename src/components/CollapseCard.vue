@@ -71,7 +71,7 @@ const setIsDisabled = (param1, shouldshowbool) =>
 {
     isDisabled.value = param1;
     if(shouldshowbool == false){
-        gsap.set(dline, {opacity:0})
+        gsap.set(String('.'+dlineclass), {opacity:0})
         showSection.value = false
         console.log('setIsDisabled() - showSection.value is: ' + showSection.value)
     }

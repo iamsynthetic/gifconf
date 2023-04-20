@@ -76,26 +76,62 @@ function dofunction(){
           <CollapseCard 
             title="day 1 - 2pm to 4pm room 3"
             body="It's Ok - how to come to grips with pronouncing it wrong and how to start your conversion"
+            :classtitle="'title3'"
+            :classschedulearrowcircle="'sacircle3'"
+            :classschedulearrow="'sa3'" 
+            :classdline="'dl3'"
+            :classcontainer="'container3'" 
+            :classthecopy="'copy3'"
           />
           <CollapseCard  
           title="day 1 - 5pm to 6pm room 1"
           body="WORKSHOP - Do you immediately think of peanut butter when encountering a Gif? A therapy workshop"
+          :classtitle="'title4'"
+            :classschedulearrowcircle="'sacircle4'"
+            :classschedulearrow="'sa4'" 
+            :classdline="'dl4'"
+            :classcontainer="'container4'" 
+            :classthecopy="'copy4'"
           />
           <CollapseCard 
           title="day 2 - 9am to 10am room 1"
           body="Rethinking your pronounciation"
+          :classtitle="'title5'"
+            :classschedulearrowcircle="'sacircle5'"
+            :classschedulearrow="'sa5'" 
+            :classdline="'dl5'"
+            :classcontainer="'container5'" 
+            :classthecopy="'copy5'"
           />
           <CollapseCard 
           title="day 2 - 10am to 1pm room 2"
           body="Gif's - the people that pronounce them with a J and what to do when you encounter them, part 2 a workshop"
+          :classtitle="'title6'"
+            :classschedulearrowcircle="'sacircle6'"
+            :classschedulearrow="'sa6'" 
+            :classdline="'dl6'"
+            :classcontainer="'container6'" 
+            :classthecopy="'copy6'"
           />
           <CollapseCard 
           title="day 2 - 1pm to 2pm room 3"
           body="Gif influencers and their role in society's perception of Gif"
+          :classtitle="'title7'"
+            :classschedulearrowcircle="'sacircle7'"
+            :classschedulearrow="'sa7'" 
+            :classdline="'dl7'"
+            :classcontainer="'container7'" 
+            :classthecopy="'copy7'"
           />
           <CollapseCard 
           body="10 tips for helping others pronounce Gif"
             title="day 2 - 3pm to 4pm room 1"
+            :classtitle="'title8'"
+            :classschedulearrowcircle="'sacircle8'"
+            :classschedulearrow="'sa8'" 
+            :classdline="'dl8'"
+            :classcontainer="'container8'" 
+            :classthecopy="'copy8'"
           />
           <CollapseCard 
           body="Help! my significant other says it wrong! A workshop"
@@ -104,26 +140,62 @@ function dofunction(){
           <CollapseCard 
           body="Adding Gif's to your everyday, a workshop"
             title="day 3 - 9am to 10am room 1"
+            :classtitle="'title9'"
+            :classschedulearrowcircle="'sacircle9'"
+            :classschedulearrow="'sa9'" 
+            :classdline="'dl9'"
+            :classcontainer="'container9'" 
+            :classthecopy="'copy9'"
           />
           <CollapseCard 
           body="Adding Gif's to other people's everyday, a workshop"
             title="day 3 - 10am to 12pm room 2"
+            :classtitle="'title10'"
+            :classschedulearrowcircle="'sacircle10'"
+            :classschedulearrow="'sa10'" 
+            :classdline="'dl10'"
+            :classcontainer="'container10'" 
+            :classthecopy="'copy10'"
           />
           <CollapseCard 
           body="Recognition for good Gif-ing in your community, a workshop"
             title="day 3 - 1pm to 2pm room 3"
+            :classtitle="'title11'"
+            :classschedulearrowcircle="'sacircle11'"
+            :classschedulearrow="'sa11'" 
+            :classdline="'dl11'"
+            :classcontainer="'container11'" 
+            :classthecopy="'copy11'"
           />
           <CollapseCard 
           body="the Gif of Gab Raffle!"
             title="day 3 - 2pm to 3pm room 1"
+            :classtitle="'title12'"
+            :classschedulearrowcircle="'sacircle12'"
+            :classschedulearrow="'sa12'" 
+            :classdline="'dl12'"
+            :classcontainer="'container12'" 
+            :classthecopy="'copy12'"
           />
           <CollapseCard 
           body="Thank you Closing Ceremony, and free Gif(t)"
             title="day 3 - 4pm to 5pm room 2"
+            :classtitle="'title13'"
+            :classschedulearrowcircle="'sacircle13'"
+            :classschedulearrow="'sa13'" 
+            :classdline="'dl13'"
+            :classcontainer="'container13'" 
+            :classthecopy="'copy13'"
           />
           <CollapseCard 
           body="Get Giffy with it (without slapping anyone) PARTY!"
             title="day 3 - 7pm to 11pm all rooms"
+            :classtitle="'title14'"
+            :classschedulearrowcircle="'sacircle14'"
+            :classschedulearrow="'sa14'" 
+            :classdline="'dl14'"
+            :classcontainer="'container14'" 
+            :classthecopy="'copy14'"
           />
       </div>
     </div>
