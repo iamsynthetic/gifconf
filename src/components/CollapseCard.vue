@@ -23,7 +23,7 @@ let q = gsap.utils.selector(root);
 
 const domouseover = () => 
 {
-    gsap.to(q(titleref), {cssRule: {opacity:1}, duration:.5 });
+    gsap.to(q(".button-title"), {cssRule: {opacity:1}, duration:.5 });
     // console.log('mouse over')
     // gsap.to(titleref, {cssRule: {opacity:1}, duration: .5});
     console.log('mouse over 2')
@@ -35,7 +35,7 @@ const domouseleave = () =>
     // gsap.to(titleref, {cssRule: {opacity:.4}, duration: .5});
     // console.log('mouse leave 2')
 
-    gsap.to(q(titleref), {cssRule: {opacity:.4}, duration:.5 });
+    gsap.to(q(".button-title"), {cssRule: {opacity:.4}, duration:.5 });
 }
 
 const toggle = () => 
