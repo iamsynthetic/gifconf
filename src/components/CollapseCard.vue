@@ -24,7 +24,7 @@ let q = gsap.utils.selector(root);
 const domouseover = () => 
 {
 let q = gsap.utils.selector(root);
-    gsap.to(q(titleref), {opacity:1, duration:.5 });
+    gsap.to(q(titleref), {cssRule: {opacity:1}, duration:.5 });
     // console.log('mouse over')
     // gsap.to(titleref, {cssRule: {opacity:1}, duration: .5});
     console.log('mouse over 2')
@@ -36,9 +36,8 @@ const domouseleave = () =>
     // gsap.to(titleref, {cssRule: {opacity:.4}, duration: .5});
     // console.log('mouse leave 2')
     // gsap.to(q(".box"), { x: 100 });
-    console.log('mouse leave')
 let q = gsap.utils.selector(root);
-    gsap.to(q(titleref), {opacity:.4, duration:.5 });
+    gsap.to(q(titleref), {cssRule: {opacity:.4}, duration:.5 });
 }
 
 const toggle = () => 
