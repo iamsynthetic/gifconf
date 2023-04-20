@@ -83,7 +83,7 @@ onMounted(() => {
           </div>
         </div>
         <div class="fresh-row fresh-headline-position-left">
-          <div class="fresh-headline headline-anim1"><span class="make-pink">A NEW</span></div>
+          <div class="fresh-headline headline-anim1"><span class="make-pink">A test NEW</span></div>
           <div class="fresh-headline headline-anim1">POINT OF</div>
           <div class="fresh-headline headline-anim1">VIEW</div>
         </div>

@@ -63,7 +63,7 @@ onMounted(() => {
 <template>
   <div id="venue" class="row-spacer">
     <div class="copy">
-        <div class="title1 venue-headline" ref="title1">VENUE&nbsp;<span class="make-pink">VENUE</span>&nbsp;VENUE&nbsp;VENUE&nbsp;VENUE</div>
+        <div class="title1 venue-headline" ref="title1">VENUE&nbsp;<span class="make-pink">VENUE</span>&nbsp;VENUE&nbsp;VENUE&nbsp;VENUEtest</div>
     </div>
     <div class="venue-container">
       
