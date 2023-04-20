@@ -15,12 +15,7 @@ const props = defineProps({
     classcontainer: String,
     classthecopy: String
 })
-// let btntitle = String;
-// let container = String;
-// let thecopy = String;
-// let dline = String;
-// let schedulearrow = String;
-// let schedulearrowcircle = String;
+
 let showSection = ref(false);
 let isDisabled = ref(false);
 let titleclass = props.classtitle;
@@ -73,7 +68,6 @@ const setIsDisabled = (param1, shouldshowbool) =>
     if(shouldshowbool == false){
         gsap.set(String('.'+dlineclass), {opacity:0})
         showSection.value = false
-        console.log('setIsDisabled() - showSection.value is: ' + showSection.value)
     }
 }
 

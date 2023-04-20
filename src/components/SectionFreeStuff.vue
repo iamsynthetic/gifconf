@@ -15,9 +15,6 @@ onMounted(() => {
 
 function dofunction(){
     
-   console.log("Browser width: " + window.innerWidth + " pixels\nScreen width: " + screen.width + " pixels");
-
-
     gsap.set('.free-item-anim', {opacity:0, x:50})
 
     if(browserwidth <= 375)

@@ -9,9 +9,6 @@ gsap.registerPlugin(ScrollTrigger)
 gsap.registerPlugin(CSSRulePlugin);
 
 onMounted(() => {
-  
-  console.log('fresh - onmounted ')
-  
   const tlmasker = gsap.timeline({
     scrollTrigger: {
       trigger:".fresh-img-mask",

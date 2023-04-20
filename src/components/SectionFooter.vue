@@ -69,14 +69,12 @@ function dofunction(){
 
 const domouseover = (e) => 
 {
-  console.log('over ' + e.currentTarget)
   gsap.to(e.currentTarget, {scaleX:1.2, scaleY:1.2, duration:.3, ease: "Back.easeInOut"});
   gsap.to(e.currentTarget, {filter: 'invert(66%) sepia(93%) saturate(438%) hue-rotate(283deg) brightness(95%) contrast(99%)', duration:.3});
 }
 
 const domouseleave = (e) =>
 {
-  console.log('leave ' + e.currentTarget)
   gsap.to(e.currentTarget, {scaleX:1, scaleY:1, duration:.3, ease: "Back.easeInOut"});
   gsap.to(e.currentTarget, {filter: 'invert(0%) sepia(9%) saturate(105%) hue-rotate(321deg) brightness(116%) contrast(90%)', duration:.3});
 

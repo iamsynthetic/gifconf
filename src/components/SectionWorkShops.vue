@@ -18,11 +18,6 @@ let previousisdisabled = ref(true);
 let mobilenextisdisabled = ref(false);
 let mobilepreviousisdisabled = ref(true);
 
-// let wsprevarrow = String
-// let wsnextarrow = String
-// let mobilewsprevarrow = String
-// let mobilewsnextarrow = String
-
 onMounted(() => {
   doWorkshopFunction()
 })
