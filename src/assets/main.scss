@@ -1,0 +1,410 @@
+@import url('https://fonts.googleapis.com/css2?family=Antonio:wght@300;400;600&family=Lato:wght@400;700&display=swap');
+@import './base.css';
+
+*
+{
+  box-sizing: border-box;
+}
+
+body 
+{
+  padding: 0;
+  margin: 0;
+  background-color: #0D0D0D;
+}
+
+#app
+{
+  width:100%;
+  margin: 0;
+  padding: 0;
+
+  overflow: hidden;
+  font-weight: normal;
+}
+
+
+/* LOADER */ 
+.loader
+{
+  height:100vh;
+  width:100%;
+  z-index:999;
+  background-color:#0D0D0D;
+}
+
+.loader-txt
+{
+  font-family: 'Antonio', sans-serif;
+  color: #F280CA;
+  font-size:3rem;
+  font-weight:600;
+  line-height:1;
+  margin-left: -10px;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%,-50%);
+}
+
+
+/* DIV ORGANIZING */
+
+//////////////////////////// spacers ////////////////////////////////
+.spacer-tiny
+{
+  width:100%;
+  height:50px;
+}
+.spacer-small
+{
+  width:100%;
+  height:100px;
+}
+.spacer-big
+{
+  width: 100%;
+  height: 150px;
+}
+.spacer-15
+{
+  width:100%;
+  height:15vh;
+}
+.spacer-30
+{
+  width:100%;
+  height:30vh;
+}
+
+.general-gutter
+{
+  margin-left:15px;
+  margin-right:30px;
+}
+
+//////////////////////////// setting row ////////////////////////////////
+.row
+{
+  display:flex;
+  // width:100vw;
+  flex-direction:row;
+  margin:0px;
+}
+
+.row-spacer
+{
+  margin-top:20px;
+  margin-bottom:20px;
+}
+
+.row-reverse
+{
+  flex-direction:row-reverse;
+}
+
+/* TEXT */
+
+//////////////////////////// general headline ////////////////////////////////
+.general-headline
+{
+  font-family: 'Antonio', sans-serif;
+  color: #F2F2F2;
+  font-size:10rem;
+  font-weight:600;
+  line-height:1;
+  margin-left: -10px;
+}
+
+.make-pink
+{
+  color:#F280CA;
+}
+
+//////////////////////////// main headline ////////////////////////////////
+.headline
+{
+  font-family: 'Antonio', sans-serif;
+  color: #F2F2F2;
+  font-size:10vw;
+  font-weight:300;
+  letter-spacing:-.5rem;
+  line-height:1.25; 
+}
+
+.headline-gif
+{
+  font-family: 'Antonio', sans-serif;
+  color: #F280CA;
+  font-size:10vw;
+  font-weight:300;
+  letter-spacing:-.375rem;
+}
+
+
+//////////////////////////// schedule headline ////////////////////////////////
+.schedule-headline
+{
+  font-family: 'Antonio', sans-serif;
+  color: #F2F2F2;
+  font-size:10rem;
+  font-weight:600;
+  line-height:1;
+  margin-top:0px;
+  opacity:.02;
+}
+
+/* BUTTONS */
+/* ******************************  MAIN BUTTON ****************************** */
+.buybutton
+{
+  display:flex;
+  flex-direction:column;
+  width:250px;
+  height:85px;
+  border-radius: 0px 20px 20px 20px;
+  border:2px solid #0d0d0d;
+  background-color: #F280CA;
+  align-self:flex-end;
+  margin-top:20px;
+  overflow:hidden;
+  cursor:pointer;
+}
+
+.buybutton::before
+{
+  content: '';
+  position:absolute;
+  top:0;
+  left:0;
+  width:300px;
+  height:200px;
+  margin-left:-300px;
+  background:#F2F2F2;
+}
+
+.buttondesign
+{
+  font-family: 'lato', sans-serif;
+  font-size:.75rem;
+  font-weight:700;
+  color: #0D0D0D;
+  text-align:left;
+  margin:5px 0px 0px 15px;
+}
+
+.buytickets
+{
+  font-family: 'lato', sans-serif;
+  font-size:1.125rem;
+  font-weight:700;
+  color: #0D0D0D;
+  text-align:left;
+  align-self:flex-start;
+  margin:5px 0px 0px 15px;
+}
+
+.arrow 
+{
+  position: absolute;
+  top: 54%;
+  left: 82%;
+  transform: translate(-50%, -50%);
+  transform: rotate(-90deg);
+  cursor: pointer;
+}
+
+.arrow span {
+  display: block;
+  width: 12px;
+  height: 12px;
+  border-bottom: 3px solid #0D0D0D;
+  border-right: 3px solid #0D0D0D;
+  transform: rotate(45deg);
+  margin: -3px;
+  animation: animate 2s infinite;
+}
+
+.arrow span:nth-child(2) {
+  animation-delay: -0.2s;
+}
+
+.arrow span:nth-child(3) {
+  animation-delay: -0.4s;
+}
+
+//////////////////////////// image boxes ////////////////////////////////
+.img-box
+{
+  display:flex;
+  flex-direction:column;
+  justify-content:flex-end;
+  height:100%;
+  margin:0;
+}
+.img-box-rollover
+{
+  position:absolute;
+  width:100%;
+  height:100%;
+  cursor:pointer;
+  z-index:3;
+}
+.img-box-content
+{
+  position:relative;
+  padding:1rem 1rem;
+  z-index:2;
+}
+.img-box-content > .content-headline
+{
+  font-family: 'Antonio', sans-serif;
+  font-size:2rem;
+  font-weight:600;
+  color: #F2F2F2;
+}
+.img-box-content > .subheadings
+{
+  display:flex;
+}
+.img-box-content > .subheadings > span
+{
+  white-space:nowrap;
+  overflow:hidden;
+  margin-right:1em;
+}
+.img-box-content > .subheadings > span:last-child
+{
+  margin-right:0;
+}
+.img-box-content > .subheadings > .sub1
+{
+  flex-grow:1;
+  color:#F2F2F2;
+  opacity:.9;
+}
+.img-box-content > .subheadings > .sub3
+{
+  flex-shrink:0;
+}
+.img-box-thumb
+{
+  position:absolute;
+  top:0;
+  left:0;
+  width:100%;
+  height:100%;
+  z-index:0;
+}
+.img-box img
+{
+  position:absolute;
+  top:0;
+  left:0;
+  width:100%;
+  height:100%;
+  object-fit:cover;
+  z-index:0;
+}
+.img-box-thumb img
+{
+  filter: brightness(.8) contrast(1) grayscale(.8);
+}
+.img1, .img2, .img3, .img4, .img5, .img6 {
+  opacity:0;
+  z-index:1;
+} 
+.color-overlay::after
+{
+  cursor:pointer;
+  position: absolute;
+  content: ''; 
+  top: 0; 
+  left: 0; 
+  height: 100%; 
+  width: 100%;
+  background: linear-gradient(to top,rgba(242, 128, 202, 100%) 0%, rgba(242, 128, 202, 0) 100%);
+  mix-blend-mode: overlay;
+  background-size:cover;
+  z-index:1;
+}
+
+/* ******************************  MEDIA QUERIES ****************************** */
+
+/* mobile */
+@media only screen and (min-width: 375px) and (max-width: 767px)
+{
+  /* ////////////////////////////////  spacing  //////////////////////////////// */
+  .row-spacer
+  {
+    margin-top:0px;
+    margin-bottom:0px;
+  }
+
+  .spacer-big
+  {
+    width: 100%;
+    height: 0px;
+  }
+
+  .spacer-mobile
+  {
+    width:100%;
+    height:100px;
+  }
+
+  .general-gutter
+  {
+    margin-left:15px;
+    margin-right:15px;
+  }
+
+  //////////////////////////// general headline ////////////////////////////////
+  .general-headline
+  {
+    font-size:5rem;
+  }
+
+  /* ////////////////////////////////  text headlines  //////////////////////////////// */
+  .headline
+  {
+    letter-spacing:-.25rem;
+  }
+
+  .headline-gif
+  {
+    letter-spacing:0rem;
+  }
+
+  /* ////////////////////////////////  main button  //////////////////////////////// */
+  .buybutton 
+  {
+    width: 150px;
+    height: 65px;
+  }
+  .buytickets
+  {
+    font-size: 1rem;
+    margin: 0px 0px 0px 15px;
+  }
+}
+
+/* tablet */
+@media only screen and (min-width: 768px) and (max-width: 1024px)
+{
+  .general-headline
+  {
+    font-size:7rem;
+  }
+  /* TEXT HEADLINES */
+  .headline
+  {
+    letter-spacing:-.375rem;
+  }
+
+  .headline-gif
+  {
+    letter-spacing:-.25rem;
+  }
+
+}
