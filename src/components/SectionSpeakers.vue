@@ -101,7 +101,7 @@ const buttonhover = (img, hovered) => {
               <span class="sub1">Big Data Philosopher</span>
             </div>
           </main>
-          <div class="img-box-thumb color-overlay img2"></div>
+          <div class="img-box-thumb color-overlay img1"></div>
           <figure class="img-box-thumb thumb-img-left">
             <img  src="/speakers/speaker2.jpg" alt="picture of Nicholas Orozco">
           </figure>
@@ -116,7 +116,7 @@ const buttonhover = (img, hovered) => {
               <span class="sub1">Longform Engagement Advocate</span>
             </div>
           </main>
-          <div class="img-box-thumb color-overlay img1"></div>
+          <div class="img-box-thumb color-overlay img2"></div>
           <figure class="img-box-thumb thumb-img-left">
               <img src="/speakers/speaker1.jpg" alt="picture of Joshua Harrison">
           </figure>
@@ -181,7 +181,7 @@ const buttonhover = (img, hovered) => {
               <span class="sub1">Twitter Commander</span>
             </div>
           </main>
-          <div class="img-box-thumb color-overlay img6"></div>
+          <div class="img-box-thumb color-overlay img5"></div>
           <figure class="img-box-thumb thumb-img-left2">
             <img id="img6" src="/speakers/speaker6.jpg" alt="picture of Abbie Mahoney">
           </figure>
@@ -196,7 +196,7 @@ const buttonhover = (img, hovered) => {
               <span class="sub1">Brand Story Minister</span>
             </div>
           </main>
-          <div class="img-box-thumb color-overlay img5"></div>
+          <div class="img-box-thumb color-overlay img6"></div>
           <figure class="img-box-thumb thumb-img-left2">
             <img id="img5" src="/speakers/speaker5.jpg" alt="picture of Abbie Mahoney">
           </figure>

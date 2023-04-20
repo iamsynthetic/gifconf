@@ -24,8 +24,8 @@ function dofunction(){
   ScrollTrigger.batch('.schedule-headline', {
       start: "center bottom",
       end: "top 90%",
-      onEnter: batch => gsap.to(batch, {opacity:.08, y:0, duration:.5, ease: "Circ.easeOut"}),
-      onLeaveBack: batch => gsap.to(batch, {opacity:0, y:100, duration:.5, ease: "Circ.easeOut"})
+      onEnter: batch => gsap.to(batch, {cssRule: {opacity:.08}, y:0, duration:.5, ease: "Circ.easeOut"}),
+      onLeaveBack: batch => gsap.to(batch, {cssRule: {opacity:0}, y:100, duration:.5, ease: "Circ.easeOut"})
   });
 
   gsap.set('.schedule-main-title', {opacity:0, x:-100})
@@ -33,8 +33,8 @@ function dofunction(){
   ScrollTrigger.batch('.schedule-main-title', {
     start: "center bottom",
     end: "top 90%",
-    onEnter: batch => gsap.to(batch, {opacity:1, x:0, duration:.5, ease: "Circ.easeInOut"}),
-    onLeaveBack: batch => gsap.to(batch, {opacity:0, x:-100, duration:.5, ease: "Circ.easeInOut"})
+    onEnter: batch => gsap.to(batch, {cssRule: {opacity:1}, x:0, duration:.5, ease: "Circ.easeInOut"}),
+    onLeaveBack: batch => gsap.to(batch, {cssRule: {opacity:0}, x:-100, duration:.5, ease: "Circ.easeInOut"})
   });
 
 }
