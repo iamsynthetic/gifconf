@@ -67,12 +67,16 @@ const arrowtl = gsap.timeline()
 
 const domouseover = () => 
 {
-    gsap.to(titleref, {opacity:1, duration: .5});
+    console.log('mouse over')
+    gsap.to(titleref, {cssRule: {opacity:1}, duration: .5});
+    console.log('mouse over 2')
 }
 
 const domouseleave = () =>
 {
-    gsap.to(titleref, {opacity:.4, duration: .5});
+    console.log('mouse leave')
+    gsap.to(titleref, {cssRule: {opacity:.4}, duration: .5});
+    console.log('mouse leave 2')
 }
 
 const toggle = () => 
