@@ -10,6 +10,8 @@ gsap.registerPlugin(CSSRulePlugin);
 
 onMounted(() => {
   
+  console.log('fresh - onmounted ')
+
   const tlmasker = gsap.timeline({
     scrollTrigger: {
       trigger:".fresh-img-mask",
@@ -36,26 +38,37 @@ onMounted(() => {
   gsap.set('.headline-anim2', {opacity:0, x:-300})
   gsap.set('.bodytext-anim1', {opacity:0})
 
-  ScrollTrigger.batch(".headline-anim1", {
-    trigger: ".fresh-img-mask",
-    start: "center bottom",
-    onEnter: batch => gsap.to(batch, {opacity:1, x:0, duration:.5, stagger:.4, ease:"Circ.easeInOut"}),
-    onLeaveBack: batch => gsap.to(batch, {opacity:0, x:300, duration:.5, stagger:.4, ease:"Circ.easeInOut"})
-  });
+  const freshtl1 = gsap.timeline({
+    scrollTrigger: {
+      trigger:".fresh-img-mask",
+      start:"center bottom",
+      onEnter: () => gsap.to('.headline-anim1', {opacity:1, x:0, duration:.5, stagger:.4, ease:"Circ.easeInOut"}),
+      onLeaveBack: () => gsap.to('.headline-anim1', {opacity:0, x:300, duration:.5, stagger:.4, ease:"Circ.easeInOut"})
+    }
+  })
+  
+  freshtl1.to('.headline-anim1')
 
-  ScrollTrigger.batch(".headline-anim2", {
-    trigger: ".fresh-img-mask",
-    start: "center bottom",
-    onEnter: batch => gsap.to(batch, {opacity:1, x:0, duration:.5, stagger:.4, ease:"Circ.easeInOut"}),
-    onLeaveBack: batch => gsap.to(batch, {opacity:0, x:-300, duration:.5, stagger:.4, ease:"Circ.easeInOut"})
-  });
+  // ScrollTrigger.batch(".headline-anim1", {
+  //   trigger: ".fresh-img-mask",
+  //   start: "center bottom",
+  //   onEnter: batch => gsap.to(batch, {opacity:1, x:0, duration:.5, stagger:.4, ease:"Circ.easeInOut"}),
+  //   onLeaveBack: batch => gsap.to(batch, {opacity:0, x:300, duration:.5, stagger:.4, ease:"Circ.easeInOut"})
+  // });
 
-  ScrollTrigger.batch(".bodytext-anim1", {
-    trigger: ".fresh-img-mask",
-    start: "center bottom",
-    onEnter: batch => gsap.to(batch, {opacity:1, duration:.7, delay:.8}),
-    onLeaveBack: batch => gsap.to(batch, {opacity:0, duration:.2})
-  });
+  // ScrollTrigger.batch(".headline-anim2", {
+  //   trigger: ".fresh-img-mask",
+  //   start: "center bottom",
+  //   onEnter: batch => gsap.to(batch, {opacity:1, x:0, duration:.5, stagger:.4, ease:"Circ.easeInOut"}),
+  //   onLeaveBack: batch => gsap.to(batch, {opacity:0, x:-300, duration:.5, stagger:.4, ease:"Circ.easeInOut"})
+  // });
+
+  // ScrollTrigger.batch(".bodytext-anim1", {
+  //   trigger: ".fresh-img-mask",
+  //   start: "center bottom",
+  //   onEnter: batch => gsap.to(batch, {opacity:1, duration:.7, delay:.8}),
+  //   onLeaveBack: batch => gsap.to(batch, {opacity:0, duration:.2})
+  // });
 })
 
 </script>
