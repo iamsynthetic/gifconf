@@ -7,14 +7,16 @@ gsap.registerPlugin(CSSRulePlugin);
 
 const props = defineProps({
     title: String,
-    body: String
+    body: String,
+    className: String
 })
 let root = ref(null)
 let btntitle = String;
 let container = String;
 let thecopy = String;
 let dline = String;
-let titleref = String;
+// let titleref = String;
+let titleref = ref(null)
 let schedulearrow = String;
 let schedulearrowcircle = String;
 let showSection = ref(false);
@@ -23,10 +25,10 @@ let q = gsap.utils.selector(root);
 
 const domouseover = () => 
 {
-let q = gsap.utils.selector(root);
-    gsap.to(q('.button-title'), {cssRule: {opacity:1}, duration:.5 });
+    //let q = gsap.utils.selector(root);
+    //gsap.to(q(String('.button-title')), {opacity:1, duration:.5 });
     // console.log('mouse over')
-    // gsap.to(titleref, {cssRule: {opacity:1}, duration: .5});
+    gsap.to(String('.custom-class'), {opacity:1, duration: .5});
     console.log('mouse over 2')
 }
 
@@ -37,7 +39,7 @@ const domouseleave = () =>
     // console.log('mouse leave 2')
     // gsap.to(q(".box"), { x: 100 });
 let q = gsap.utils.selector(root);
-    gsap.to(q('.button-title'), {cssRule: {opacity:.4}, duration:.5 });
+    gsap.to(q(titleref), {x:0, duration:.5 });
 }
 
 const toggle = () => 
@@ -84,7 +86,7 @@ const setIsDisabled = (param1, shouldshowbool) =>
         <div class="section">
             <button class="btn" ref="btntitle" :disabled="isDisabled" @mouseover="domouseover" @mouseleave="domouseleave" @click="toggle">
                 <div class="button-container">
-                    <p class="button-title" ref="titleref">{{ props.title }}</p>
+                    <p class="button-title" :class="className" ref="titleref">{{ props.title }}</p>
                     <button class="schedule-arrow-circle" ref="schedulearrowcircle">
                         <div class="schedule-arrow" ref="schedulearrow">
                             <span class="arrow1"></span>
