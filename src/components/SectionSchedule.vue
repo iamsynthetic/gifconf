@@ -56,12 +56,22 @@ function dofunction(){
           <CollapseCard
             title="day 1 - 9am to 11am room 1"
             body="Introduction to the Conference and General Discussions"
-            :class-name="'q1'"
+            :classtitle="'title1'"
+            :classschedulearrowcircle="'sacircle1'"
+            :classschedulearrow="'sa1'" 
+            :classdline="'dl1'"
+            :classcontainer="'container1'" 
+            :classthecopy="'copy1'"
           />
           <CollapseCard 
             title="day 1 - 12pm to 1pm room 2"
             body="Gif, when people pronouce them with a J"
-            :class-name="'q2'"
+            :classtitle="'title2'"
+            :classschedulearrowcircle="'sacircle2'"
+            :classschedulearrow="'sa2'" 
+            :classdline="'dl2'"
+            :classcontainer="'container2'" 
+            :classthecopy="'copy2'"
           />
           <CollapseCard 
             title="day 1 - 2pm to 4pm room 3"

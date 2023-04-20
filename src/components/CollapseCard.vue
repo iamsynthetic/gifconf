@@ -8,49 +8,36 @@ gsap.registerPlugin(CSSRulePlugin);
 const props = defineProps({
     title: String,
     body: String,
-    className: String
+    classtitle: String,
+    classschedulearrowcircle: String,
+    classschedulearrow: String,
+    classdline: String,
+    classcontainer: String,
+    classthecopy: String
 })
-let root = ref(null)
-let btntitle = String;
-let container = String;
-let thecopy = String;
-let dline = String;
-// let titleref = String;
-let titleref = ref(null)
-let schedulearrow = String;
-let schedulearrowcircle = String;
+// let btntitle = String;
+// let container = String;
+// let thecopy = String;
+// let dline = String;
+// let schedulearrow = String;
+// let schedulearrowcircle = String;
 let showSection = ref(false);
 let isDisabled = ref(false);
-let q = gsap.utils.selector(root);
-
-let blah = props.className;
-
-
-console.log('blah is: ' + blah);
-
+let titleclass = props.classtitle;
+let schedulearrowcircleclass = props.classschedulearrowcircle;
+let schedulearrowclass = props.classschedulearrow;
+let dlineclass = props.classdline;
+let containerclass = props.classcontainer;
+let thecopyclass = props.classthecopy;
 
 const domouseover = () => 
 {
-    //let q = gsap.utils.selector(root);
-    //gsap.to(q(String('.button-title')), {opacity:1, duration:.5 });
-    // console.log('mouse over')
-    console.log('blah in mouse over is: ' + blah)
-    console.log('type of blah is: ' + typeof(blah))
-    gsap.to(String('.'+blah), {opacity:1, duration: .5});
-    console.log('mouse over 2')
+    gsap.to(String('.'+titleclass), {opacity:1, duration: .5});
 }
 
 const domouseleave = () =>
 {
-    // console.log('mouse leave')
-    // gsap.to(titleref, {cssRule: {opacity:.4}, duration: .5});
-    // console.log('mouse leave 2')
-    // gsap.to(q(".box"), { x: 100 });
-// let q = gsap.utils.selector(root);
-//     gsap.to(q(titleref), {x:0, duration:.5 });
-
-
-gsap.to(String('.'+blah), {opacity:.4, duration: .5});
+    gsap.to(String('.'+titleclass), {opacity:.4, duration: .5});
 }
 
 const toggle = () => 
@@ -61,22 +48,22 @@ const toggle = () =>
     if(showSection.value == false)
     {
         showSection.value = true
-        gsap.set(thecopy, {opacity:0})
-        gsap.set(dline, {width:'0%', opacity:1})
-        gsap.to(schedulearrowcircle, {scaleX:.8, scaleY:.8, backgroundColor:'#F2F2F2', duration:.5, delay:.1, ease:"Back.easeInOut"})
-        gsap.to(schedulearrow, {rotate:0, duration:.5, ease:"Expo.easeInOut"})
-        gsap.to(dline, {width: '100%', duration:.5, ease:"Expo.easeInOut"})
-        gsap.to(container, {height:'80px', duration:.5, ease:"Expo.easeInOut"})
-        gsap.to(thecopy, {opacity:1, duration:.5, ease:"Expo.easeInOut", onComplete:setIsDisabled, onCompleteParams:[false, true]})
+        gsap.set(String('.'+thecopyclass), {opacity:0})
+        gsap.set(String('.'+dlineclass), {width:'0%', opacity:1})
+        gsap.to(String('.'+schedulearrowcircleclass), {scaleX:.8, scaleY:.8, backgroundColor:'#F2F2F2', duration:.5, delay:.1, ease:"Back.easeInOut"})
+        gsap.to(String('.'+schedulearrowclass), {rotate:0, duration:.5, ease:"Expo.easeInOut"})
+        gsap.to(String('.'+dlineclass), {width: '100%', duration:.5, ease:"Expo.easeInOut"})
+        gsap.to(String('.'+containerclass), {height:'80px', duration:.5, ease:"Expo.easeInOut"})
+        gsap.to(String('.'+thecopyclass), {opacity:1, duration:.5, ease:"Expo.easeInOut", onComplete:setIsDisabled, onCompleteParams:[false, true]})
         
     }
     else
     {
-        gsap.to(schedulearrowcircle, {scaleX:1, scaleY:1, backgroundColor:'#F280CA', duration:.5, delay:.1, ease:"Back.easeInOut"})
-        gsap.to(schedulearrow, {rotate:-90, duration:.5,  ease:"Expo.easeInOut"})
-        gsap.to(dline, {width: '0%', duration:.5, ease:"Expo.easeInOut"})
-        gsap.to(thecopy, {opacity:0, duration:.5, ease:"Expo.easeInOut"})
-        gsap.to(container, {height: '0px', duration:.5, ease:"Expo.easeInOut", onComplete:setIsDisabled, onCompleteParams:[false, false]})
+        gsap.to(String('.'+schedulearrowcircleclass), {scaleX:1, scaleY:1, backgroundColor:'#F280CA', duration:.5, delay:.1, ease:"Back.easeInOut"})
+        gsap.to(String('.'+schedulearrowclass), {rotate:-90, duration:.5,  ease:"Expo.easeInOut"})
+        gsap.to(String('.'+dlineclass), {width: '0%', duration:.5, ease:"Expo.easeInOut"})
+        gsap.to(String('.'+thecopyclass), {opacity:0, duration:.5, ease:"Expo.easeInOut"})
+        gsap.to(String('.'+containerclass), {height: '0px', duration:.5, ease:"Expo.easeInOut", onComplete:setIsDisabled, onCompleteParams:[false, false]})
     }
 }
 
@@ -93,21 +80,21 @@ const setIsDisabled = (param1, shouldshowbool) =>
 </script>
 
 <template>
-    <div class="schedule-list" ref="root">
+    <div class="schedule-list">
         <div class="section">
-            <button class="btn" ref="btntitle" :disabled="isDisabled" @mouseover="domouseover" @mouseleave="domouseleave" @click="toggle">
+            <button class="btn" :disabled="isDisabled" @mouseover="domouseover" @mouseleave="domouseleave" @click="toggle">
                 <div class="button-container">
-                    <p class="button-title" :class="className" ref="titleref">{{ props.title }}</p>
-                    <button class="schedule-arrow-circle" ref="schedulearrowcircle">
-                        <div class="schedule-arrow" ref="schedulearrow">
+                    <p class="button-title" :class="classtitle">{{ props.title }}</p>
+                    <button class="schedule-arrow-circle" :class="classschedulearrowcircle">
+                        <div class="schedule-arrow" :class="classschedulearrow">
                             <span class="arrow1"></span>
                         </div>
                     </button>
                 </div>
             </button>
-            <hr class="darkline" ref="dline"/>
-            <div class="content-container" ref="container" v-show="showSection">
-                <p class="copy" ref="thecopy">
+            <hr class="darkline" :class="classdline"/>
+            <div class="content-container" :class="classcontainer" v-show="showSection">
+                <p class="copy" :class="classthecopy">
                     {{ props.body }}
                 </p>
             </div>
