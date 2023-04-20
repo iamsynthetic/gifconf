@@ -136,10 +136,6 @@ function dofunction(){
           <CollapseCard 
           body="Help! my significant other says it wrong! A workshop"
             title="day 2 - 5pm to 6pm room 2"
-          />
-          <CollapseCard 
-          body="Adding Gif's to your everyday, a workshop"
-            title="day 3 - 9am to 10am room 1"
             :classtitle="'title9'"
             :classschedulearrowcircle="'sacircle9'"
             :classschedulearrow="'sa9'" 
@@ -148,8 +144,8 @@ function dofunction(){
             :classthecopy="'copy9'"
           />
           <CollapseCard 
-          body="Adding Gif's to other people's everyday, a workshop"
-            title="day 3 - 10am to 12pm room 2"
+          body="Adding Gif's to your everyday, a workshop"
+            title="day 3 - 9am to 10am room 1"
             :classtitle="'title10'"
             :classschedulearrowcircle="'sacircle10'"
             :classschedulearrow="'sa10'" 
@@ -158,8 +154,8 @@ function dofunction(){
             :classthecopy="'copy10'"
           />
           <CollapseCard 
-          body="Recognition for good Gif-ing in your community, a workshop"
-            title="day 3 - 1pm to 2pm room 3"
+          body="Adding Gif's to other people's everyday, a workshop"
+            title="day 3 - 10am to 12pm room 2"
             :classtitle="'title11'"
             :classschedulearrowcircle="'sacircle11'"
             :classschedulearrow="'sa11'" 
@@ -168,8 +164,8 @@ function dofunction(){
             :classthecopy="'copy11'"
           />
           <CollapseCard 
-          body="the Gif of Gab Raffle!"
-            title="day 3 - 2pm to 3pm room 1"
+          body="Recognition for good Gif-ing in your community, a workshop"
+            title="day 3 - 1pm to 2pm room 3"
             :classtitle="'title12'"
             :classschedulearrowcircle="'sacircle12'"
             :classschedulearrow="'sa12'" 
@@ -178,8 +174,8 @@ function dofunction(){
             :classthecopy="'copy12'"
           />
           <CollapseCard 
-          body="Thank you Closing Ceremony, and free Gif(t)"
-            title="day 3 - 4pm to 5pm room 2"
+          body="the Gif of Gab Raffle!"
+            title="day 3 - 2pm to 3pm room 1"
             :classtitle="'title13'"
             :classschedulearrowcircle="'sacircle13'"
             :classschedulearrow="'sa13'" 
@@ -188,14 +184,24 @@ function dofunction(){
             :classthecopy="'copy13'"
           />
           <CollapseCard 
-          body="Get Giffy with it (without slapping anyone) PARTY!"
-            title="day 3 - 7pm to 11pm all rooms"
+          body="Thank you Closing Ceremony, and free Gif(t)"
+            title="day 3 - 4pm to 5pm room 2"
             :classtitle="'title14'"
             :classschedulearrowcircle="'sacircle14'"
             :classschedulearrow="'sa14'" 
             :classdline="'dl14'"
             :classcontainer="'container14'" 
             :classthecopy="'copy14'"
+          />
+          <CollapseCard 
+          body="Get Giffy with it (without slapping anyone) PARTY!"
+            title="day 3 - 7pm to 11pm all rooms"
+            :classtitle="'title15'"
+            :classschedulearrowcircle="'sacircle15'"
+            :classschedulearrow="'sa15'" 
+            :classdline="'dl15'"
+            :classcontainer="'container15'" 
+            :classthecopy="'copy15'"
           />
       </div>
     </div>
