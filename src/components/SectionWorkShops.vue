@@ -18,10 +18,10 @@ let previousisdisabled = ref(true);
 let mobilenextisdisabled = ref(false);
 let mobilepreviousisdisabled = ref(true);
 
-let wsprevarrow = String
-let wsnextarrow = String
-let mobilewsprevarrow = String
-let mobilewsnextarrow = String
+// let wsprevarrow = String
+// let wsnextarrow = String
+// let mobilewsprevarrow = String
+// let mobilewsnextarrow = String
 
 onMounted(() => {
   doWorkshopFunction()
@@ -74,18 +74,18 @@ const doWorkshopFunction = () => {
 
   ////////////////////////////////////// animate the buttons in //////////////////////////////////////
 
-  gsap.set(wsprevarrow, {opacity:0, x:-25})
+  gsap.set('.wsprevarrow', {opacity:0, x:-25})
 
-  ScrollTrigger.batch(wsprevarrow, {
+  ScrollTrigger.batch('.wsprevarrow', {
     start: "top 90%",
     end: "top 90%",
     onEnter: batch => gsap.to(batch, {opacity:.4, x:0, duration:.5, delay:.15, ease:"Circ.easeOut"}),
     onLeaveBack: batch => gsap.to(batch, {opacity:0, x:-25, duration:.5, ease:"Circ.easeOut"})
   });
 
-  gsap.set(wsnextarrow, {opacity:0, x:25})
+  gsap.set('.wsnextarrow', {opacity:0, x:25})
 
-  ScrollTrigger.batch(wsnextarrow, {
+  ScrollTrigger.batch('.wsnextarrow', {
     start: "top 90%",
     end: "top 90%",
     onEnter: batch => gsap.to(batch, {opacity:1, x:0, duration:.5, delay:.15, ease:"Circ.easeOut"}),
@@ -106,7 +106,7 @@ const clicker = (bool) => {
       if(num > 0)
       {
         previousisdisabled.value = false;
-        gsap.to(wsprevarrow, {opacity:1, duration:.5})
+        gsap.to('.wsprevarrow', {opacity:1, duration:.5})
       }
     }
     else if(num == 4)
@@ -116,10 +116,10 @@ const clicker = (bool) => {
       animateImagesAndText(oldnum, 25, -25)
       
       nextisdisabled.value = true;
-      gsap.to(wsnextarrow, {opacity:.4, duration:.5})
+      gsap.to('.wsnextarrow', {opacity:.4, duration:.5})
 
       previousisdisabled.value = false;
-      gsap.to(wsprevarrow, {opacity:1, duration:.5})
+      gsap.to('.wsprevarrow', {opacity:1, duration:.5})
       
     }
   }
@@ -134,7 +134,7 @@ const clicker = (bool) => {
       if(num < limit)
       {
         nextisdisabled.value = false;
-        gsap.to(wsnextarrow, {opacity:1, duration:.5})
+        gsap.to('.wsnextarrow', {opacity:1, duration:.5})
       }
     }
     else if(num == 1)
@@ -144,10 +144,10 @@ const clicker = (bool) => {
       animateImagesAndText(oldnum, -25, 25)
 
       previousisdisabled.value = true;
-      gsap.to(wsprevarrow, {opacity:.4, duration:.5})
+      gsap.to('.wsprevarrow', {opacity:.4, duration:.5})
  
       nextisdisabled.value = false;
-      gsap.to(wsnextarrow, {opacity:1, duration:.5})
+      gsap.to('.wsnextarrow', {opacity:1, duration:.5})
     }
   }
 
@@ -162,7 +162,7 @@ const clicker = (bool) => {
       if(mobilenum > 0)
       {
         mobilepreviousisdisabled.value = false;
-        gsap.to(mobilewsprevarrow, {opacity:1, duration:.5})
+        gsap.to('.mobilewsprevarrow', {opacity:1, duration:.5})
       }
     }
     else if(mobilenum == 4)
@@ -172,10 +172,10 @@ const clicker = (bool) => {
       mobileanimateImagesAndText(mobileoldnum, 25, -25)
       
       mobilenextisdisabled.value = true;
-      gsap.to(mobilewsnextarrow, {opacity:.4, duration:.5})
+      gsap.to('.mobilewsnextarrow', {opacity:.4, duration:.5})
 
       mobilepreviousisdisabled.value = false;
-      gsap.to(mobilewsprevarrow, {opacity:1, duration:.5})
+      gsap.to('.mobilewsprevarrow', {opacity:1, duration:.5})
     }
   }
   else if(bool == 'mobileprevious')
@@ -189,7 +189,7 @@ const clicker = (bool) => {
       if(mobilenum < limit)
       {
         mobilenextisdisabled.value = false;
-        gsap.to(mobilewsnextarrow, {opacity:1, duration:.5})
+        gsap.to('.mobilewsnextarrow', {opacity:1, duration:.5})
       }
     }
     else if(mobilenum == 1)
@@ -199,10 +199,10 @@ const clicker = (bool) => {
       mobileanimateImagesAndText(mobileoldnum, -25, 25)
 
       mobilepreviousisdisabled.value = true;
-      gsap.to(mobilewsprevarrow, {opacity:.4, duration:.5})
+      gsap.to('.mobilewsprevarrow', {opacity:.4, duration:.5})
  
       mobilenextisdisabled.value = false;
-      gsap.to(mobilewsnextarrow, {opacity:1, duration:.5})
+      gsap.to('.mobilewsnextarrow', {opacity:1, duration:.5})
     }
   }
 }
@@ -320,12 +320,12 @@ gsap.to(['.mobilewstxt'+mobilenum], {opacity:1, x:0, duration:.5, delay:.15, eas
             </div>
             <div class="row">
               <div class="ws-button-container">
-                <button class="ws-arrow-circle wsprev" ref="mobilewsprevarrow" :disabled="mobilepreviousisdisabled" @click="clicker('mobileprevious')">
+                <button class="ws-arrow-circle wsprev mobilewsprevarrow" :disabled="mobilepreviousisdisabled" @click="clicker('mobileprevious')">
                     <div class="ws-arrow-1" ref="schedulearrow">
                         <span></span>
                     </div>
                 </button>
-                <button class="ws-arrow-circle" ref="mobilewsnextarrow" :disabled="mobilenextisdisabled" @click="clicker('mobilenext')">
+                <button class="ws-arrow-circle mobilewsnextarrow" :disabled="mobilenextisdisabled" @click="clicker('mobilenext')">
                     <div class="ws-arrow-2" ref="schedulearrow">
                         <span></span>
                     </div>
@@ -408,12 +408,12 @@ gsap.to(['.mobilewstxt'+mobilenum], {opacity:1, x:0, duration:.5, delay:.15, eas
                 </div>
               </div>
               <div class="ws-button-container">
-                <button class="ws-arrow-circle wsprev" ref="wsprevarrow" :disabled="previousisdisabled" @click="clicker('previous')">
+                <button class="ws-arrow-circle wsprev wsprevarrow" :disabled="previousisdisabled" @click="clicker('previous')">
                     <div class="ws-arrow-1" ref="schedulearrow">
                         <span></span>
                     </div>
                 </button>
-                <button class="ws-arrow-circle" ref="wsnextarrow" :disabled="nextisdisabled" @click="clicker('next')">
+                <button class="ws-arrow-circle wsnextarrow" :disabled="nextisdisabled" @click="clicker('next')">
                     <div class="ws-arrow-2" ref="schedulearrow">
                         <span></span>
                     </div>
