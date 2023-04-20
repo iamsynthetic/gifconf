@@ -23,7 +23,8 @@ let q = gsap.utils.selector(root);
 
 const domouseover = () => 
 {
-    gsap.to(q(".button-title"), {cssRule: {opacity:1}, duration:.5 });
+let q = gsap.utils.selector(root);
+    gsap.to(q(titleref), {opacity:1, duration:.5 });
     // console.log('mouse over')
     // gsap.to(titleref, {cssRule: {opacity:1}, duration: .5});
     console.log('mouse over 2')
@@ -34,8 +35,10 @@ const domouseleave = () =>
     // console.log('mouse leave')
     // gsap.to(titleref, {cssRule: {opacity:.4}, duration: .5});
     // console.log('mouse leave 2')
-
-    gsap.to(q(".button-title"), {cssRule: {opacity:.4}, duration:.5 });
+    // gsap.to(q(".box"), { x: 100 });
+    console.log('mouse leave')
+let q = gsap.utils.selector(root);
+    gsap.to(q(titleref), {opacity:.4, duration:.5 });
 }
 
 const toggle = () => 
@@ -78,7 +81,7 @@ const setIsDisabled = (param1, shouldshowbool) =>
 </script>
 
 <template>
-    <div class="schedule-list">
+    <div class="schedule-list" ref="root">
         <div class="section">
             <button class="btn" ref="btntitle" :disabled="isDisabled" @mouseover="domouseover" @mouseleave="domouseleave" @click="toggle">
                 <div class="button-container">
