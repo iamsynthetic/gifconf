@@ -212,4 +212,30 @@ function dofunction(){
   }
 }
 
+/* other */
+@media only screen and (min-width: 822px)
+{
+  .partners-mobile
+  {
+    display:none;
+  }
+
+  .partners-desktop
+  {
+    display:block;
+  }
+  .partner-container-2, .partner-container-3, .partner-container-4, .partner-container-5
+  {
+    display:flex;
+    margin-top:20px;
+  }
+
+  .partner-box
+  {
+    flex:1;
+    aspect-ratio: 3 / 2;
+    margin: 0 20px 0 0;
+  }
+}
+
 </style>
