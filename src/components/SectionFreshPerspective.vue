@@ -3,12 +3,12 @@
 import { ref, onMounted } from 'vue'
 import { gsap } from 'gsap'
 import { ScrollTrigger } from 'gsap/ScrollTrigger'
-// import { CSSRulePlugin } from "gsap/CSSRulePlugin";
 
 gsap.registerPlugin(ScrollTrigger)
-// gsap.registerPlugin(CSSRulePlugin);
 
-
+const hl1anim1 = ref(null)
+const hl1anim2 = ref(null)
+const hl1anim3 = ref(null)
 
 onMounted(() => {
   
@@ -36,17 +36,32 @@ onMounted(() => {
 
   const imganim = gsap.from('.fresh-box-thumb', {y:"-1vw", duration:1, delay:.2, ease:"Circ.easeInOut", paused:true})
 
-  gsap.set('.headline-anim1', {opacity:0, x:300})
+  // gsap.set('.headline-anim1', {opacity:0, x:300})
+
+
+  gsap.set('.fresh-headline', {opacity:0, x:300})
+
+  const tl1 = gsap.timeline({
+    scrollTrigger: {
+      trigger:".fresh-img-mask",
+      start: "center bottom",
+      onEnter: () => gsap.to('.fresh-headline', {opacity:1, x:0, duration:.5, stagger:.4, ease:"Circ.easeInOut"}),
+      onLeaveBack: () => gsap.to('.fresh-headline', {opacity:0, x:300, duration:.5, stagger:.4, ease:"Circ.easeInOut"})
+    }
+  })
+
+
+
   gsap.set('.headline-anim2', {opacity:0, x:-300})
   gsap.set('.bodytext-anim1', {opacity:0})
 
 
-  ScrollTrigger.batch(".headline-anim1", {
-    trigger: ".fresh-img-mask",
-    start: "center bottom",
-    onEnter: batch => gsap.to(batch, {opacity:1, x:0, duration:.5, stagger:.4, ease:"Circ.easeInOut"}),
-    onLeaveBack: batch => gsap.to(batch, {opacity:0, x:300, duration:.5, stagger:.4, ease:"Circ.easeInOut"})
-  });
+  // ScrollTrigger.batch(".headline-anim1", {
+  //   trigger: ".fresh-img-mask",
+  //   start: "center bottom",
+  //   onEnter: batch => gsap.to(batch, {opacity:1, x:0, duration:.5, stagger:.4, ease:"Circ.easeInOut"}),
+  //   onLeaveBack: batch => gsap.to(batch, {opacity:0, x:300, duration:.5, stagger:.4, ease:"Circ.easeInOut"})
+  // });
 
   // ScrollTrigger.batch(".headline-anim2", {
   //   trigger: ".fresh-img-mask",
@@ -75,9 +90,9 @@ onMounted(() => {
           </div>
         </div>
         <div class="fresh-row fresh-headline-position-left">
-          <div class="fresh-headline headline-anim1"><span class="make-pink">A test NEW</span></div>
-          <div class="fresh-headline headline-anim1">POINT OF</div>
-          <div class="fresh-headline headline-anim1">VIEW</div>
+          <div id="h1a" class="fresh-headline" ref="hl1anim1"><span class="make-pink">A test NEW</span></div>
+          <div id="h1b" class="fresh-headline" ref="hl1anim2">POINT OF</div>
+          <div id="h1c" class="fresh-headline" ref="hl1anim3">VIEW</div>
         </div>
       </div>
 
